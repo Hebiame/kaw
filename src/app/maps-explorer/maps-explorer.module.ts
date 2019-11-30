@@ -7,13 +7,23 @@ import { MapsExplorerHeaderComponent } from './maps-explorer-header/maps-explore
 import { FiltersComponent } from './filters/filters.component';
 import { MapViewComponent } from './map-view/map-view.component';
 import { MapsListComponent } from './maps-list/maps-list.component';
+import { StoreModule } from "@ngrx/store";
+import * as fromMapsExplorer from './maps-explorer.reducer';
 
 
 @NgModule({
-  declarations: [MapsExplorerComponent, MapsExplorerHeaderComponent, FiltersComponent, MapViewComponent, MapsListComponent],
+  declarations: [
+    MapsExplorerComponent,
+    MapsExplorerHeaderComponent,
+    FiltersComponent,
+    MapViewComponent,
+    MapsListComponent
+  ],
   imports: [
     CommonModule,
-    MapsExplorerRoutingModule
+    MapsExplorerRoutingModule,
+    StoreModule.forFeature(fromMapsExplorer.mapsExplorerFeatureKey, fromMapsExplorer.reducer)
   ]
 })
+
 export class MapsExplorerModule { }
