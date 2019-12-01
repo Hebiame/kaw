@@ -10,6 +10,13 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from "@angular/common/http";
+import { NgZorroAntdModule, NZ_I18N, pl_PL } from 'ng-zorro-antd';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { registerLocaleData } from '@angular/common';
+import pl from '@angular/common/locales/pl';
+
+registerLocaleData(pl);
 
 @NgModule({
   declarations: [
@@ -28,9 +35,12 @@ import { HttpClientModule } from "@angular/common/http";
       }
     }),
     HttpClientModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    NgZorroAntdModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: pl_PL }],
   bootstrap: [ AppComponent ]
 })
 
