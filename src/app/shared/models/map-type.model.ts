@@ -7,6 +7,9 @@ export class MapType implements DeserializableModel{
   electionTypes: ElectionType[];
 
   deserialize(input: any): this {
-    return undefined;
+    Object.assign(this, input);
+    this.electionTypes = input.electionTypes ? input.electionTypes.map(election =>
+      new ElectionType().deserialize(election)) : [];
+    return this;
   }
 }

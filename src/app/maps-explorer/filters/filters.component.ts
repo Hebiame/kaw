@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MapsExplorerService } from "../maps-explorer.service";
+import { Observable } from "rxjs";
+import { ReferenceField } from "../../shared/models/reference-field.model";
 
 @Component({
   selector: 'kaw-filters',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltersComponent implements OnInit {
 
-  constructor() { }
+  private filtersData$: Observable<ReferenceField[]>;
+
+  constructor(private mapsExplorerService: MapsExplorerService) { }
 
   ngOnInit() {
+    this.filtersData$ = this.mapsExplorerService.filtersData$;
   }
 
 }

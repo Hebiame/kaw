@@ -6,6 +6,9 @@ export class ReferenceField implements DeserializableModel{
   mapTypes: MapType[];
 
   deserialize(input: any): this {
-    return undefined;
+    Object.assign(this, input);
+    this.mapTypes = input.mapTypes ? input.mapTypes.map(map =>
+      new MapType().deserialize(map)) : [];
+    return this;
   }
 }
