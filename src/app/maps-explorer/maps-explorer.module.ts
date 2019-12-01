@@ -9,6 +9,7 @@ import { MapViewComponent } from './map-view/map-view.component';
 import { MapsListComponent } from './maps-list/maps-list.component';
 import { StoreModule } from "@ngrx/store";
 import * as fromMapsExplorer from './maps-explorer.reducer';
+import { NzLayoutModule, NzSelectModule } from "ng-zorro-antd";
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import * as fromMapsExplorer from './maps-explorer.reducer';
   imports: [
     CommonModule,
     MapsExplorerRoutingModule,
-    StoreModule.forFeature(fromMapsExplorer.mapsExplorerFeatureKey, fromMapsExplorer.reducer)
+    StoreModule.forFeature(fromMapsExplorer.mapsExplorerFeatureKey, fromMapsExplorer.reducer),
+    NzSelectModule,
+    NzLayoutModule
   ]
 })
 

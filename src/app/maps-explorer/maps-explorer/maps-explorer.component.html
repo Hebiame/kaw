@@ -1,4 +1,16 @@
-<kaw-maps-explorer-header></kaw-maps-explorer-header>
-<kaw-filters></kaw-filters>
-<kaw-maps-list></kaw-maps-list>
-<kaw-map-view></kaw-map-view>
+<nz-layout>
+  <nz-header>
+    <kaw-maps-explorer-header></kaw-maps-explorer-header>
+  </nz-header>
+  <nz-content>
+    <kaw-filters></kaw-filters>
+    <nz-layout>
+      <nz-sider nzWidth="300px" nzTheme="light">
+        <kaw-maps-list></kaw-maps-list>
+      </nz-sider>
+      <nz-content>
+        <kaw-map-view></kaw-map-view>
+      </nz-content>
+    </nz-layout>
+  </nz-content>
+</nz-layout>
