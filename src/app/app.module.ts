@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import pl from '@angular/common/locales/pl';
+import { EffectsModule } from "@ngrx/effects";
 
 registerLocaleData(pl);
 
@@ -34,6 +35,7 @@ registerLocaleData(pl);
         strictActionImmutability: true
       }
     }),
+    EffectsModule.forRoot([]),
     HttpClientModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     NgZorroAntdModule,

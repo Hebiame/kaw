@@ -1,1 +1,80 @@
-<p>filters works!</p>
+<form nz-form #filtersForm="ngForm" [nzLayout]="'inline'">
+  <div nz-row [nzGutter]="24">
+    <nz-form-item nz-col nzSpan="2.8" *ngIf="referenceFieldsSelect$ | async as referenceFieldSelect">
+      <nz-form-label nzNoColon>
+        {{ referenceFieldSelect.label }}
+      </nz-form-label>
+      <nz-form-control>
+        <nz-select
+          nzAllowClear
+          [nzPlaceHolder]="referenceFieldSelect.isEnabled ? selectPlaceHolder : disabledSelectPlaceHolder"
+          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]="selectedFilters.referenceField"
+          (ngModelChange)="referenceFieldChange($event)" [nzDisabled]="!referenceFieldSelect.isEnabled"
+        >
+          <ng-container *ngFor="let option of referenceFieldSelect.options; let i = index">
+            <nz-option [nzValue]="i" [nzLabel]="option"></nz-option>
+          </ng-container>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item nz-col nzSpan="2.8" *ngIf="mapTypesSelect$ | async as mapTypesSelect">
+      <nz-form-label nzNoColon>
+        {{ mapTypesSelect.label }}
+      </nz-form-label>
+      <nz-form-control>
+        <nz-select
+          nzAllowClear
+          [nzPlaceHolder]="mapTypesSelect.isEnabled ? selectPlaceHolder : disabledSelectPlaceHolder"
+          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]="selectedFilters.mapType"
+          (ngModelChange)="mapTypeChange($event)" [nzDisabled]="!mapTypesSelect.isEnabled"
+        >
+          <ng-container *ngFor="let option of mapTypesSelect.options; let i = index">
+            <nz-option [nzValue]="i" [nzLabel]="option"></nz-option>
+          </ng-container>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item nz-col nzSpan="2.8" *ngIf="electionTypesSelect$ | async as electionTypesSelect">
+      <nz-form-label nzNoColon>
+        {{ electionTypesSelect.label }}
+      </nz-form-label>
+      <nz-form-control>
+        <nz-select
+          nzAllowClear
+          [nzPlaceHolder]="electionTypesSelect.isEnabled ? selectPlaceHolder : disabledSelectPlaceHolder"
+          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]="selectedFilters.electionType"
+          (ngModelChange)="electionTypeChange($event)" [nzDisabled]="!electionTypesSelect.isEnabled"
+        >
+          <ng-container *ngFor="let option of electionTypesSelect.options; let i = index">
+            <nz-option [nzValue]="i" [nzLabel]="option"></nz-option>
+          </ng-container>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item nz-col nzSpan="2.8" *ngIf="yearsSelect$ | async as yearsSelect">
+      <nz-form-label nzNoColon>
+        {{ yearsSelect.label }}
+      </nz-form-label>
+      <nz-form-control>
+        <nz-select
+          nzAllowClear
+          [nzPlaceHolder]="yearsSelect.isEnabled ? selectPlaceHolder : disabledSelectPlaceHolder"
+          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]="selectedFilters.year"
+          (ngModelChange)="yearTypeChange($event)"
+          [nzDisabled]="!yearsSelect.isEnabled"
+        >
+          <ng-container *ngFor="let option of yearsSelect.options; let i = index">
+            <nz-option [nzValue]="i" [nzLabel]="option"></nz-option>
+          </ng-container>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+  </div>
+</form>

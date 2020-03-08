@@ -1,7 +1,7 @@
 [
   {
     "name": "gminy",
-    "maps": [
+    "mapTypes": [
       {
         "name": "standardowa",
         "yearsLabel": "Rok",
