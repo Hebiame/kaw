@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from "@ngrx/store";
+import { MapsExplorerState } from "../maps-explorer.reducer";
+import * as MapsExplorerSelectors from "../maps-explorer.selectors";
 
 @Component({
   selector: 'kaw-map-view',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapViewComponent implements OnInit {
 
-  constructor() { }
+  private mapImgPath$;
+
+  constructor(
+    private store: Store<MapsExplorerState>
+  ) { }
 
   ngOnInit() {
+    this.mapImgPath$ = this.store.pipe(select(MapsExplorerSelectors.getMapImgPath));
   }
 
 }

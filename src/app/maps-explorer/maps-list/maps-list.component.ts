@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
+import { MapsExplorerState } from "../maps-explorer.reducer";
+import { MapData } from "../../shared/models/map-data.model";
+import { select, Store } from "@ngrx/store";
+import * as MapsExplorerSelectors from "../maps-explorer.selectors";
+import * as MapsExplorerActions from "../maps-explorer.actions";
 
 @Component({
   selector: 'kaw-maps-list',
@@ -7,9 +13,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapsListComponent implements OnInit {
 
-  constructor() { }
+  private mapData$: Observable<MapData[]>;
+
+  constructor(
+    private store: Store<MapsExplorerState>
+  ) { }
 
   ngOnInit() {
+    this.mapData$ = this.store.pipe(select(MapsExplorerSelectors.getMapData));
   }
 
+  itemListChange(fileName: string) {
+    this.store.dispatch(MapsExplorerActions.itemListChange({ value: fileName}))
+  }
 }

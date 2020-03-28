@@ -1,1 +1,19 @@
-<p>maps-list works!</p>
+<ng-container *ngIf="mapData$ | async as mapData">
+  <ng-container *ngFor="let list of mapData">
+    <nz-list
+      [nzDataSource]="list.items"
+      nzSize="small"
+      [nzHeader]="list.header"
+      [nzRenderItem]="smallItem"
+    >
+      <ng-template #smallItem let-item>
+        <nz-list-item>
+          <div (click)="itemListChange(item.fileName)">{{ item.text }}</div>
+          <a>{{item.otherMapModel}}</a>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </ng-container>
+</ng-container>
+
+

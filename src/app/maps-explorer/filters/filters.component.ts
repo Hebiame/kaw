@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MapsExplorerService } from "../maps-explorer.service";
 import { Observable } from "rxjs";
-import { ReferenceField } from "../../shared/models/reference-field.model";
 import { select, Store } from "@ngrx/store";
 import { MapsExplorerState, SelectState } from "../maps-explorer.reducer";
 import * as MapsExplorerSelectors from "../maps-explorer.selectors";

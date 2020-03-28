@@ -1,12 +1,12 @@
 import { DeserializableModel } from "./deserializable.model";
 
-export class ElectionType implements DeserializableModel {
-  name: string;
-  years: string[];
+export class MapData implements DeserializableModel {
+  header: string;
+  items: string[];
 
   deserialize(input: any): this {
-    if (input.years == null) {
-      input.years = [];
+    if (input.items == null) {
+      input.items = [];
     }
 
     return Object.assign(this, input);

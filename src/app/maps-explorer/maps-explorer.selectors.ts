@@ -27,3 +27,52 @@ export const getYearsSelect = createSelector(
   selectMapsExplorer,
   (state: MapsExplorerState) => state.yearsSelect
 );
+
+export const getMapDataPath = createSelector(
+  selectMapsExplorer,
+  (state: MapsExplorerState) => {
+    if ((state.referenceFieldSelect.isEnabled && state.referenceFieldSelect.value === null)
+    || (state.mapTypesSelect.isEnabled && state.mapTypesSelect.value === null)
+    || (state.electionTypesSelect.isEnabled && state.electionTypesSelect.value === null)
+    || (state.yearsSelect.isEnabled && state.yearsSelect.value === null)) {
+      return null;
+    }
+
+    let path = '';
+
+    path += state.referenceFieldSelect.value !== null
+      ? '/assets/maps/' + state.referenceFieldSelect.options[state.referenceFieldSelect.value]
+      : '';
+
+    path += state.mapTypesSelect.value !== null
+      ? '/' + state.mapTypesSelect.options[state.mapTypesSelect.value]
+      : '';
+
+    path += state.electionTypesSelect.value !== null
+      ? '/' + state.electionTypesSelect.options[state.electionTypesSelect.value]
+      : '';
+
+    path += state.yearsSelect.value !== null
+      ? '/' + state.yearsSelect.options[state.yearsSelect.value]
+      : '';
+
+    return path;
+  }
+);
+
+export const getMapListPath = createSelector(
+  getMapDataPath,
+  (path: string) => path ? path + '/list.json' : null
+);
+
+export const getMapImgPath = createSelector(
+  selectMapsExplorer,
+  getMapDataPath,
+  (state: MapsExplorerState, path: string) =>
+    state.selectedMapName && path ? path + '/' + state.selectedMapName : null
+);
+
+export const getMapData = createSelector(
+  selectMapsExplorer,
+  (state: MapsExplorerState) => state.mapData
+);

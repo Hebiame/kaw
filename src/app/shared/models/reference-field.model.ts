@@ -1,7 +1,7 @@
-import {MapType} from "./map-type.model";
-import {DeserializableModel} from "./deserializable.model";
+import { MapType } from "./map-type.model";
+import { DeserializableModel } from "./deserializable.model";
 
-export class ReferenceField implements DeserializableModel{
+export class ReferenceField implements DeserializableModel {
   name: string;
   mapTypes: MapType[];
 

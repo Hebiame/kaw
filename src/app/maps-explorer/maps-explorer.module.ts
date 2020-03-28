@@ -8,7 +8,7 @@ import { MapViewComponent } from './map-view/map-view.component';
 import { MapsListComponent } from './maps-list/maps-list.component';
 import { StoreModule } from "@ngrx/store";
 import * as fromMapsExplorer from './maps-explorer.reducer';
-import { NzFormModule, NzGridModule, NzLayoutModule, NzSelectModule } from "ng-zorro-antd";
+import { NzFormModule, NzGridModule, NzLayoutModule, NzListModule, NzSelectModule } from "ng-zorro-antd";
 import { FormsModule } from "@angular/forms";
 import { EffectsModule } from "@ngrx/effects";
 import { MapsExplorerEffects } from "./maps-explorer.effects";
@@ -31,7 +31,8 @@ import { MapsExplorerEffects } from "./maps-explorer.effects";
     NzLayoutModule,
     FormsModule,
     NzFormModule,
-    NzGridModule
+    NzGridModule,
+    NzListModule
   ]
 })
 

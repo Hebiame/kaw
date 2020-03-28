@@ -1,6 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as mapsExplorerActions from './maps-explorer.actions';
 import { ReferenceField } from "../shared/models/reference-field.model";
+import { MapData } from "../shared/models/map-data.model";
 
 export interface MapsExplorerState {
   filtersData: ReferenceField[],
@@ -8,7 +9,7 @@ export interface MapsExplorerState {
   mapTypesSelect: SelectState,
   electionTypesSelect: SelectState,
   yearsSelect: SelectState,
-  list: [],
+  mapData: MapData[],
   selectedMapName: string
 }
 
@@ -27,7 +28,7 @@ export const initialState: MapsExplorerState = {
   mapTypesSelect: new SelectState('Mapa'),
   electionTypesSelect: new SelectState('Wybory'),
   yearsSelect: new SelectState('Rok'),
-  list: [],
+  mapData: [],
   selectedMapName: null
 };
 
@@ -63,12 +64,16 @@ const mapsExplorerReducer = createReducer(
       },
       electionTypesSelect: {
         ...state.electionTypesSelect,
+        value: null,
         isEnabled: false
       },
       yearsSelect: {
         ...state.yearsSelect,
+        value: null,
         isEnabled: false
-      }
+      },
+      mapData: null,
+      selectedMapName: null
     });
   }),
   on(mapsExplorerActions.mapTypeChange, (state, { value }) => {
@@ -97,8 +102,11 @@ const mapsExplorerReducer = createReducer(
         yearsSelect: {
           ...state.yearsSelect,
           label: yearsLabel,
+          value: null,
           isEnabled: false
-        }
+        },
+        mapData: null,
+        selectedMapName: null
       });
   }),
   on(mapsExplorerActions.electionTypeChange, (state, { value }) => {
@@ -115,9 +123,12 @@ const mapsExplorerReducer = createReducer(
       },
       yearsSelect: {
         ...state.yearsSelect,
+        value: null,
         options: yearsOptions,
         isEnabled: yearsOptions.length > 0
-      }
+      },
+      mapData: null,
+      selectedMapName: null
     });
   }),
   on(mapsExplorerActions.yearChange, (state, { value }) => {
@@ -131,9 +142,19 @@ const mapsExplorerReducer = createReducer(
         ...state.yearsSelect,
         value: value,
         options: years != null ? years : []
-      }
+      },
+      mapData: null,
+      selectedMapName: null
     });
-  })
+  }),
+  on(mapsExplorerActions.setMapData, (state, { data }) => ({
+    ...state,
+    mapData: data
+  })),
+  on(mapsExplorerActions.itemListChange, (state, { value }) => ({
+    ...state,
+    selectedMapName: value
+  }))
 );
 
 export function reducer(state: MapsExplorerState | undefined, action: Action) {
