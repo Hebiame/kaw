@@ -8,10 +8,20 @@ import { MapViewComponent } from './map-view/map-view.component';
 import { MapsListComponent } from './maps-list/maps-list.component';
 import { StoreModule } from "@ngrx/store";
 import * as fromMapsExplorer from './maps-explorer.reducer';
-import { NzFormModule, NzGridModule, NzLayoutModule, NzListModule, NzSelectModule } from "ng-zorro-antd";
+import {
+  NzButtonModule,
+  NzFormModule,
+  NzGridModule, NzIconModule,
+  NzLayoutModule,
+  NzListModule,
+  NzSelectModule,
+  NzTypographyModule
+} from "ng-zorro-antd";
 import { FormsModule } from "@angular/forms";
 import { EffectsModule } from "@ngrx/effects";
 import { MapsExplorerEffects } from "./maps-explorer.effects";
+import { NzSpaceModule } from "ng-zorro-antd/space";
+import { NgScrollbarModule } from "ngx-scrollbar";
 
 
 @NgModule({
@@ -26,13 +36,18 @@ import { MapsExplorerEffects } from "./maps-explorer.effects";
     CommonModule,
     MapsExplorerRoutingModule,
     StoreModule.forFeature(fromMapsExplorer.mapsExplorerFeatureKey, fromMapsExplorer.reducer),
-    EffectsModule.forFeature([MapsExplorerEffects]),
+    EffectsModule.forFeature([ MapsExplorerEffects ]),
     NzSelectModule,
     NzLayoutModule,
     FormsModule,
     NzFormModule,
     NzGridModule,
-    NzListModule
+    NzListModule,
+    NzTypographyModule,
+    NzSpaceModule,
+    NgScrollbarModule,
+    NzButtonModule,
+    NzIconModule
   ]
 })
 

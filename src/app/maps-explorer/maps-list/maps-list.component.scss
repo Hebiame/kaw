@@ -1,0 +1,27 @@
+.list {
+  margin: 8px 0 10px 0;
+
+  &__header {
+    margin: 15px 25px 5px 25px;
+    padding: 10px 0;
+    font-weight: 500;
+  }
+
+  &__item {
+    border-bottom: none;
+    padding: 8px 16px 8px 25px;
+    transition: color .3s cubic-bezier(.645,.045,.355,1);
+
+    &:hover {
+      color: #663333;
+      transition: color .3s cubic-bezier(.645,.045,.355,1);
+      cursor: pointer;
+    }
+
+    &--active {
+      background-color: #66333333;
+      border-right: 4px solid #663333;
+      padding-right: 12px;
+    }
+  }
+}

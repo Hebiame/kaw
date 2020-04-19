@@ -1,3 +1,14 @@
-<ng-container *ngIf="mapImgPath$ | async as mapImgPath">
-  <img [src]=mapImgPath />
+<div class="image-viewer">
+<ng-container *ngIf="mapImgPath$ | async as mapImgPath; else placeholder">
+  <div class="image-viewer__toolbar">
+    <nz-button-group class="image-viewer__buttons">
+    <a nz-button nzType="default"><i nz-icon nzType="fullscreen"></i>Pełny ekran</a>
+    <a nz-button nzType="default"><i nz-icon nzType="download"></i>Pobierz w pełnym rozmiarze</a>
+    </nz-button-group>
+  </div>
+  <img [src]=mapImgPath class="image-viewer__img"/>
 </ng-container>
+  <ng-template #placeholder>
+    Wybierz mapę
+  </ng-template>
+</div>

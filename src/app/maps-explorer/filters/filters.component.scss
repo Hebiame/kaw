@@ -1,4 +1,10 @@
-nz-select {
-  margin-right: 8px;
-  width: 120px;
+.form {
+  padding: 12px 25px;
+  border-bottom: 1px solid white;
+  background-color: #eae6e6;
+
+  &__select {
+    width: 140px;
+    margin-right: 5px;
+  }
 }

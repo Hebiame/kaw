@@ -76,3 +76,8 @@ export const getMapData = createSelector(
   selectMapsExplorer,
   (state: MapsExplorerState) => state.mapData
 );
+
+export const getSelectedMapName = createSelector(
+  selectMapsExplorer,
+  (state: MapsExplorerState) => state.selectedMapName
+);

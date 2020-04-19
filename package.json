@@ -24,6 +24,7 @@
     "@ngrx/store": "^8.5.2",
     "@ngrx/store-devtools": "^8.5.2",
     "ng-zorro-antd": "^9.0.1",
+    "ngx-scrollbar": "^7.2.1-beta.0",
     "rxjs": "^6.5.5",
     "tslib": "^1.11.1",
     "zone.js": "~0.10.2"

@@ -10,24 +10,27 @@ import { ActivatedRoute, Router } from "@angular/router";
 @Component({
   selector: 'kaw-maps-list',
   templateUrl: './maps-list.component.html',
-  styleUrls: ['./maps-list.component.scss']
+  styleUrls: [ './maps-list.component.scss' ]
 })
 export class MapsListComponent implements OnInit {
 
   public mapData$: Observable<MapData[]>;
+  public selectedMap$: Observable<string>;
 
   constructor(
     private store: Store<MapsExplorerState>,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.mapData$ = this.store.pipe(select(MapsExplorerSelectors.getMapData));
+    this.selectedMap$ = this.store.pipe(select(MapsExplorerSelectors.getSelectedMapName));
   }
 
   itemListChange(fileName: string) {
-    this.store.dispatch(MapsExplorerActions.itemListChange({ value: fileName}));
+    this.store.dispatch(MapsExplorerActions.itemListChange({ value: fileName }));
 
     this.router.navigate(
       [],
@@ -51,8 +54,8 @@ export class MapsListComponent implements OnInit {
         queryParamsHandling: 'merge'
       }
     ).then(() => {
-      this.store.dispatch(MapsExplorerActions.jumpToOtherMap());
-    }
-  );
+        this.store.dispatch(MapsExplorerActions.jumpToOtherMap());
+      }
+    );
   }
 }

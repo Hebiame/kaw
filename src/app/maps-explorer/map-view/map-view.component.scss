@@ -1,3 +1,20 @@
-img {
-  max-width: 100%;
+.image-viewer {
+  box-sizing: border-box;
+  height: calc(100vh - 204px);
+  margin: 0 25px;
+
+  &__buttons {
+    margin-top: 13px;
+  }
+
+  &__toolbar {
+    height: 57px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  &__img {
+    margin: 13px 0;
+    max-width: 100%;
+    max-height: 100%;
+  }
 }

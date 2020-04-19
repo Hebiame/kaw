@@ -1,11 +1,12 @@
-<form nz-form #filtersForm="ngForm" [nzLayout]="'inline'">
-  <div nz-row [nzGutter]="24">
-    <nz-form-item nz-col nzSpan="2.8" *ngIf="referenceFieldsSelect$ | async as referenceFieldSelect">
+<form nz-form #filtersForm="ngForm" [nzLayout]="'inline'" class="form">
+  <div nz-row>
+    <nz-form-item *ngIf="referenceFieldsSelect$ | async as referenceFieldSelect">
       <nz-form-label nzNoColon>
         {{ referenceFieldSelect.label }}
       </nz-form-label>
       <nz-form-control>
         <nz-select
+          class="form__select"
           nzAllowClear
           [nzPlaceHolder]="referenceFieldSelect.isEnabled ? selectPlaceHolder : disabledSelectPlaceHolder"
           [ngModelOptions]="{standalone: true}"
@@ -19,12 +20,13 @@
       </nz-form-control>
     </nz-form-item>
 
-    <nz-form-item nz-col nzSpan="2.8" *ngIf="mapTypesSelect$ | async as mapTypesSelect">
+    <nz-form-item *ngIf="mapTypesSelect$ | async as mapTypesSelect">
       <nz-form-label nzNoColon>
         {{ mapTypesSelect.label }}
       </nz-form-label>
       <nz-form-control>
         <nz-select
+          class="form__select"
           nzAllowClear
           [nzPlaceHolder]="mapTypesSelect.isEnabled ? selectPlaceHolder : disabledSelectPlaceHolder"
           [ngModelOptions]="{standalone: true}"
@@ -38,12 +40,13 @@
       </nz-form-control>
     </nz-form-item>
 
-    <nz-form-item nz-col nzSpan="2.8" *ngIf="electionTypesSelect$ | async as electionTypesSelect">
+    <nz-form-item *ngIf="electionTypesSelect$ | async as electionTypesSelect">
       <nz-form-label nzNoColon>
         {{ electionTypesSelect.label }}
       </nz-form-label>
       <nz-form-control>
         <nz-select
+          class="form__select"
           nzAllowClear
           [nzPlaceHolder]="electionTypesSelect.isEnabled ? selectPlaceHolder : disabledSelectPlaceHolder"
           [ngModelOptions]="{standalone: true}"
@@ -57,12 +60,13 @@
       </nz-form-control>
     </nz-form-item>
 
-    <nz-form-item nz-col nzSpan="2.8" *ngIf="yearsSelect$ | async as yearsSelect">
+    <nz-form-item *ngIf="yearsSelect$ | async as yearsSelect">
       <nz-form-label nzNoColon>
         {{ yearsSelect.label }}
       </nz-form-label>
       <nz-form-control>
         <nz-select
+          class="form__select"
           nzAllowClear
           [nzPlaceHolder]="yearsSelect.isEnabled ? selectPlaceHolder : disabledSelectPlaceHolder"
           [ngModelOptions]="{standalone: true}"

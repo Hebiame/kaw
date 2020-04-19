@@ -1,0 +1,8 @@
+.maps-explorer {
+  &__sider {
+    height: calc(100vh - 121px);
+    background-color: transparent;
+    overflow: auto;
+    border-right: 1px solid #e8e8e8;
+  }
+}

@@ -1,17 +1,24 @@
 <ng-container *ngIf="mapData$ | async as mapData">
   <ng-container *ngFor="let list of mapData">
     <nz-list
+      class="list"
       [nzDataSource]="list.items"
       nzSize="small"
-      [nzHeader]="list.header"
       [nzRenderItem]="smallItem"
     >
+      <nz-list-header class="list__header">
+        {{ list.header }}
+      </nz-list-header>
       <ng-template #smallItem let-item>
-        <nz-list-item>
-          <div (click)="itemListChange(item.fileName)">{{ item.text }}</div>
-          <a (click)="jumpToOtherMap($event, item.otherMapParams)">
-            {{ item.otherMapModel }}
-          </a>
+        <nz-list-item class="list__item" [class.list__item--active]="item.fileName === (selectedMap$ | async)" (click)="itemListChange(item.fileName)">
+          <span>{{ item.text }}</span>
+          <ul nz-list-item-actions>
+            <nz-list-item-action>
+              <a (click)="jumpToOtherMap($event, item.otherMapParams)">
+                {{ item.otherMapModel }}
+              </a>
+            </nz-list-item-action>
+          </ul>
         </nz-list-item>
       </ng-template>
     </nz-list>
