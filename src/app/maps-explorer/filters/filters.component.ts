@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class FiltersComponent implements OnInit {
 
-  @ViewChild('filtersForm', {static: false}) form;
+  @ViewChild('filtersForm') form;
 
   public referenceFieldsSelect$: Observable<SelectState>;
   public mapTypesSelect$: Observable<SelectState>;
