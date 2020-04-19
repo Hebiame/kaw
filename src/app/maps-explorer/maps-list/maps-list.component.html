@@ -9,11 +9,11 @@
       <ng-template #smallItem let-item>
         <nz-list-item>
           <div (click)="itemListChange(item.fileName)">{{ item.text }}</div>
-          <a>{{item.otherMapModel}}</a>
+          <a (click)="jumpToOtherMap($event, item.otherMapParams)">
+            {{ item.otherMapModel }}
+          </a>
         </nz-list-item>
       </ng-template>
     </nz-list>
   </ng-container>
 </ng-container>
-
-

@@ -5,6 +5,7 @@ import { MapData } from "../../shared/models/map-data.model";
 import { select, Store } from "@ngrx/store";
 import * as MapsExplorerSelectors from "../maps-explorer.selectors";
 import * as MapsExplorerActions from "../maps-explorer.actions";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'kaw-maps-list',
@@ -13,10 +14,12 @@ import * as MapsExplorerActions from "../maps-explorer.actions";
 })
 export class MapsListComponent implements OnInit {
 
-  private mapData$: Observable<MapData[]>;
+  public mapData$: Observable<MapData[]>;
 
   constructor(
-    private store: Store<MapsExplorerState>
+    private store: Store<MapsExplorerState>,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -24,6 +27,32 @@ export class MapsListComponent implements OnInit {
   }
 
   itemListChange(fileName: string) {
-    this.store.dispatch(MapsExplorerActions.itemListChange({ value: fileName}))
+    this.store.dispatch(MapsExplorerActions.itemListChange({ value: fileName}));
+
+    this.router.navigate(
+      [],
+      {
+        relativeTo: this.activatedRoute,
+        queryParams: {
+          item: fileName
+        },
+        queryParamsHandling: 'merge'
+      }
+    );
+  }
+
+  jumpToOtherMap(event, mapParams) {
+    event.preventDefault();
+    this.router.navigate(
+      [],
+      {
+        relativeTo: this.activatedRoute,
+        queryParams: mapParams,
+        queryParamsHandling: 'merge'
+      }
+    ).then(() => {
+      this.store.dispatch(MapsExplorerActions.jumpToOtherMap());
+    }
+  );
   }
 }

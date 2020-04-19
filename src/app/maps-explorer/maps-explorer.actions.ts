@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { ReferenceField } from "../shared/models/reference-field.model";
 import { MapData } from "../shared/models/map-data.model";
+import { ActivatedRoute } from "@angular/router";
 
 export const getFiltersData = createAction(
   '[Maps explorer Service] Get filters data from json'
@@ -53,6 +54,10 @@ export const getMapDataFailure = createAction(
 
 export const itemListChange = createAction(
   '[Maps List Component] Set selected item list',
-  props<{ value: string}>()
+  props<{ value: string }>()
+);
+
+export const jumpToOtherMap = createAction(
+  '[Maps items list] Jumping to other map'
 );
 

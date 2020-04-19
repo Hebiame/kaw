@@ -10,7 +10,7 @@ import * as MapsExplorerSelectors from "../maps-explorer.selectors";
 })
 export class MapViewComponent implements OnInit {
 
-  private mapImgPath$;
+  public mapImgPath$;
 
   constructor(
     private store: Store<MapsExplorerState>
