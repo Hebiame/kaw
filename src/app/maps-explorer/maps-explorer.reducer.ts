@@ -10,7 +10,8 @@ export interface MapsExplorerState {
   electionTypesSelect: SelectState,
   yearsSelect: SelectState,
   mapData: MapData[],
-  selectedMapName: string
+  selectedMapNameMd: string,
+  selectedMapNameLg: string
 }
 
 export class SelectState {
@@ -19,7 +20,8 @@ export class SelectState {
     public isEnabled: boolean = false,
     public options: string[] = [],
     public value: number = null
-  ) { }
+  ) {
+  }
 }
 
 export const initialState: MapsExplorerState = {
@@ -29,21 +31,22 @@ export const initialState: MapsExplorerState = {
   electionTypesSelect: new SelectState('Wybory'),
   yearsSelect: new SelectState('Rok'),
   mapData: [],
-  selectedMapName: null
+  selectedMapNameMd: null,
+  selectedMapNameLg: null
 };
 
 const mapsExplorerReducer = createReducer(
   initialState,
-  on(mapsExplorerActions.getFiltersDataSuccess, (state, { filtersData }) => ( {
-      ...state,
-      filtersData: filtersData
+  on(mapsExplorerActions.getFiltersDataSuccess, (state, { filtersData }) => ({
+    ...state,
+    filtersData: filtersData
   })),
   on(mapsExplorerActions.setReferenceFieldSelectOptions, (state, { options }) => ({
-      ...state,
-      referenceFieldSelect: {
-        ...state.referenceFieldSelect,
-        options: options
-      }
+    ...state,
+    referenceFieldSelect: {
+      ...state.referenceFieldSelect,
+      options: options
+    }
   })),
   on(mapsExplorerActions.referenceFieldChange, (state, { value }) => {
     const mapTypesOptions = value != null && state.filtersData[value] != null
@@ -73,41 +76,43 @@ const mapsExplorerReducer = createReducer(
         isEnabled: false
       },
       mapData: null,
-      selectedMapName: null
+      selectedMapNameMd: null,
+      selectedMapNameLg: null
     });
   }),
   on(mapsExplorerActions.mapTypeChange, (state, { value }) => {
-     const currentMapType = state.filtersData[state.referenceFieldSelect.value].mapTypes[value];
+    const currentMapType = state.filtersData[state.referenceFieldSelect.value].mapTypes[value];
 
-     const electionTypesOptions = value != null && currentMapType != null
-       ? currentMapType.electionTypes.map(it => it.name)
-       : [];
+    const electionTypesOptions = value != null && currentMapType != null
+      ? currentMapType.electionTypes.map(it => it.name)
+      : [];
 
-     const yearsLabel = currentMapType && currentMapType.yearsLabel
-       ? currentMapType.yearsLabel
-       : state.yearsSelect.label;
+    const yearsLabel = currentMapType && currentMapType.yearsLabel
+      ? currentMapType.yearsLabel
+      : state.yearsSelect.label;
 
-     return ({
-        ...state,
-        mapTypesSelect: {
-          ...state.mapTypesSelect,
-          value: value
-        },
-        electionTypesSelect: {
-          ...state.electionTypesSelect,
-          value: null,
-          options: electionTypesOptions,
-          isEnabled: electionTypesOptions.length > 0
-        },
-        yearsSelect: {
-          ...state.yearsSelect,
-          label: yearsLabel,
-          value: null,
-          isEnabled: false
-        },
-        mapData: null,
-        selectedMapName: null
-      });
+    return ({
+      ...state,
+      mapTypesSelect: {
+        ...state.mapTypesSelect,
+        value: value
+      },
+      electionTypesSelect: {
+        ...state.electionTypesSelect,
+        value: null,
+        options: electionTypesOptions,
+        isEnabled: electionTypesOptions.length > 0
+      },
+      yearsSelect: {
+        ...state.yearsSelect,
+        label: yearsLabel,
+        value: null,
+        isEnabled: false
+      },
+      mapData: null,
+      selectedMapNameMd: null,
+      selectedMapNameLg: null
+    });
   }),
   on(mapsExplorerActions.electionTypeChange, (state, { value }) => {
     const electionTypes = state.filtersData[state.referenceFieldSelect.value]
@@ -128,7 +133,8 @@ const mapsExplorerReducer = createReducer(
         isEnabled: yearsOptions.length > 0
       },
       mapData: null,
-      selectedMapName: null
+      selectedMapNameMd: null,
+      selectedMapNameLg: null
     });
   }),
   on(mapsExplorerActions.yearChange, (state, { value }) => {
@@ -144,16 +150,18 @@ const mapsExplorerReducer = createReducer(
         options: years != null ? years : []
       },
       mapData: null,
-      selectedMapName: null
+      selectedMapNameMd: null,
+      selectedMapNameLg: null
     });
   }),
   on(mapsExplorerActions.setMapData, (state, { data }) => ({
     ...state,
     mapData: data
   })),
-  on(mapsExplorerActions.itemListChange, (state, { value }) => ({
+  on(mapsExplorerActions.itemListChange, (state, { medium, large }) => ({
     ...state,
-    selectedMapName: value
+    selectedMapNameMd: medium,
+    selectedMapNameLg: large
   }))
 );
 

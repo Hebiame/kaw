@@ -10,7 +10,7 @@
         {{ list.header }}
       </nz-list-header>
       <ng-template #smallItem let-item>
-        <nz-list-item class="list__item" [class.list__item--active]="item.fileName === (selectedMap$ | async)" (click)="itemListChange(item.fileName)">
+        <nz-list-item class="list__item" [class.list__item--active]="item.fileNameMedium === (selectedMapMd$ | async)" (click)="itemListChange(item.fileNameMedium, item.fileNameLarge)">
           <span>{{ item.text }}</span>
           <ul nz-list-item-actions>
             <nz-list-item-action>

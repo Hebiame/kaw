@@ -102,7 +102,8 @@ export class FiltersComponent implements OnInit {
           mapType: value,
           electionType: null,
           year: null,
-          item: null
+          imgMd: null,
+          imgLg: null
         },
         queryParamsHandling: 'merge'
       }
@@ -119,7 +120,8 @@ export class FiltersComponent implements OnInit {
         queryParams: {
           electionType: value,
           year: null,
-          item: null
+          imgMd: null,
+          imgLg: null
         },
         queryParamsHandling: 'merge'
       }
@@ -134,7 +136,8 @@ export class FiltersComponent implements OnInit {
         relativeTo: this.activatedRoute,
         queryParams: {
           year: value,
-          item: null
+          imgMd: null,
+          imgLg: null
         },
         queryParamsHandling: 'merge'
       }

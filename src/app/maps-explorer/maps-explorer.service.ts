@@ -29,8 +29,4 @@ export class MapsExplorerService {
         response.body.map(mapData => new MapData().deserialize(mapData))
       ));
   }
-
-  public getUrlParams() {
-    console.log(this.router.getCurrentNavigation());
-  }
 }

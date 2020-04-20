@@ -10,14 +10,15 @@ import * as MapsExplorerSelectors from "../maps-explorer.selectors";
 })
 export class MapViewComponent implements OnInit {
 
-  public mapImgPath$;
+  public mapImgPathMd$;
+  public mapImgPathLg$;
 
   constructor(
     private store: Store<MapsExplorerState>
   ) { }
 
   ngOnInit() {
-    this.mapImgPath$ = this.store.pipe(select(MapsExplorerSelectors.getMapImgPath));
+    this.mapImgPathMd$ = this.store.pipe(select(MapsExplorerSelectors.getMapImgMdPath));
+    this.mapImgPathLg$ = this.store.pipe(select(MapsExplorerSelectors.getMapImgLgPath));
   }
-
 }

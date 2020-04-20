@@ -15,7 +15,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class MapsListComponent implements OnInit {
 
   public mapData$: Observable<MapData[]>;
-  public selectedMap$: Observable<string>;
+  public selectedMapMd$: Observable<string>;
+  public selectedMapLg$: Observable<string>;
 
   constructor(
     private store: Store<MapsExplorerState>,
@@ -26,18 +27,20 @@ export class MapsListComponent implements OnInit {
 
   ngOnInit() {
     this.mapData$ = this.store.pipe(select(MapsExplorerSelectors.getMapData));
-    this.selectedMap$ = this.store.pipe(select(MapsExplorerSelectors.getSelectedMapName));
+    this.selectedMapMd$ = this.store.pipe(select(MapsExplorerSelectors.getSelectedMapNameMd));
+    this.selectedMapLg$ = this.store.pipe(select(MapsExplorerSelectors.getSelectedMapNameLg));
   }
 
-  itemListChange(fileName: string) {
-    this.store.dispatch(MapsExplorerActions.itemListChange({ value: fileName }));
+  itemListChange(fileNameMd: string, fileNameLg: string) {
+    this.store.dispatch(MapsExplorerActions.itemListChange({ medium: fileNameMd, large: fileNameLg }));
 
     this.router.navigate(
       [],
       {
         relativeTo: this.activatedRoute,
         queryParams: {
-          item: fileName
+          imgMd: fileNameMd,
+          imgLg: fileNameLg
         },
         queryParamsHandling: 'merge'
       }

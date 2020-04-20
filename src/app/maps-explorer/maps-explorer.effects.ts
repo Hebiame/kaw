@@ -46,9 +46,9 @@ export class MapsExplorerEffects {
           mapType: params['mapType'],
           electionType: params['electionType'],
           year: params['year'],
-          item: params['item']
+          imgMd: params['imgMd'],
+          imgLg: params['imgLg']
         };
-        console.log(props);
 
         const actions = [];
 
@@ -68,8 +68,8 @@ export class MapsExplorerEffects {
           actions.push(MapsExplorerActions.yearChange({ value: props.year }));
         }
 
-        if (props.item) {
-          actions.push(MapsExplorerActions.itemListChange({ value: props.item }));
+        if (props.imgMd && props.imgLg) {
+          actions.push(MapsExplorerActions.itemListChange({ medium: props.imgMd, large:props.imgLg }));
         }
 
         return actions;

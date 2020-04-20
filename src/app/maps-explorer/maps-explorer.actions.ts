@@ -54,7 +54,7 @@ export const getMapDataFailure = createAction(
 
 export const itemListChange = createAction(
   '[Maps List Component] Set selected item list',
-  props<{ value: string }>()
+  props<{ medium: string, large: string }>()
 );
 
 export const jumpToOtherMap = createAction(

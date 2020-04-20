@@ -65,11 +65,18 @@ export const getMapListPath = createSelector(
   (path: string) => path ? path + '/list.json' : null
 );
 
-export const getMapImgPath = createSelector(
+export const getMapImgMdPath = createSelector(
   selectMapsExplorer,
   getMapDataPath,
   (state: MapsExplorerState, path: string) =>
-    state.selectedMapName && path ? path + '/' + state.selectedMapName : null
+    state.selectedMapNameMd && path ? path + '/' + state.selectedMapNameMd : null
+);
+
+export const getMapImgLgPath = createSelector(
+  selectMapsExplorer,
+  getMapDataPath,
+  (state: MapsExplorerState, path: string) =>
+    state.selectedMapNameLg && path ? path + '/' + state.selectedMapNameLg : null
 );
 
 export const getMapData = createSelector(
@@ -77,7 +84,12 @@ export const getMapData = createSelector(
   (state: MapsExplorerState) => state.mapData
 );
 
-export const getSelectedMapName = createSelector(
+export const getSelectedMapNameMd = createSelector(
   selectMapsExplorer,
-  (state: MapsExplorerState) => state.selectedMapName
+  (state: MapsExplorerState) => state.selectedMapNameMd
+);
+
+export const getSelectedMapNameLg = createSelector(
+  selectMapsExplorer,
+  (state: MapsExplorerState) => state.selectedMapNameLg
 );
