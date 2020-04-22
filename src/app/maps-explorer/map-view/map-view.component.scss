@@ -18,3 +18,27 @@
     max-height: 100%;
   }
 }
+
+.placeholder {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: 'Titillium Web', sans-serif;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__icon {
+    font-size: 30px;
+    margin-right: 8px;
+  }
+
+  &__text {
+    margin-bottom: 0;
+  }
+}

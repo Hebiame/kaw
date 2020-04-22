@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
+$primary-color: #663333;
+
 a {
   color: #906d6d;
 
   &:hover {
     color: #483535;
   }
+}
+
+.icon svg {
+  fill: $primary-color;
 }

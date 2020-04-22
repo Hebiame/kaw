@@ -1,14 +1,22 @@
 <div class="image-viewer">
-<ng-container *ngIf="(mapImgPathMd$ | async) && (mapImgPathLg$ | async); else placeholder">
-  <div class="image-viewer__toolbar">
-    <nz-button-group class="image-viewer__buttons">
-    <a nz-button nzType="default"><i nz-icon nzType="fullscreen"></i>Pełny ekran</a>
-    <a nz-button nzType="default" [href]="mapImgPathLg$ | async" target="_self" download><i nz-icon nzType="download"></i>Pobierz w pełnym rozmiarze</a>
-    </nz-button-group>
-  </div>
-  <img [src]="mapImgPathMd$ | async" class="image-viewer__img"/>
-</ng-container>
+  <ng-container *ngIf="(mapImgPathMd$ | async) && (mapImgPathLg$ | async); else placeholder">
+    <div class="image-viewer__toolbar">
+      <nz-button-group class="image-viewer__buttons">
+        <a nz-button nzType="default"><i nz-icon nzType="fullscreen"></i>Pełny ekran</a>
+        <a nz-button nzType="default" [href]="mapImgPathLg$ | async" target="_self" download>
+          <i nz-icon nzType="download"></i>
+          Pobierz w pełnym rozmiarze
+        </a>
+      </nz-button-group>
+    </div>
+    <img [src]="mapImgPathMd$ | async" class="image-viewer__img"/>
+  </ng-container>
   <ng-template #placeholder>
-    Wybierz mapę
+    <div class="placeholder">
+      <div class="placeholder__content">
+        <i nz-icon nzType="up-circle" nzTheme="fill" class="icon placeholder__icon"></i>
+        <h3 class="placeholder__text" nz-typography>Wybierz mapę</h3>
+      </div>
+    </div>
   </ng-template>
 </div>
