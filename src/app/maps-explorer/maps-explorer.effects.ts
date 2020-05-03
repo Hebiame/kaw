@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { Observable, of, throwError } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { catchError, flatMap, map, mergeMap, switchMap, take } from 'rxjs/operators';
 import { MapsExplorerService } from './maps-explorer.service';
 import * as MapsExplorerActions from './maps-explorer.actions';
@@ -18,7 +18,7 @@ export class MapsExplorerEffects {
         this.mapsExplorerService.filtersData$.pipe(
           switchMap(filtersData => [
             MapsExplorerActions.getFiltersDataSuccess({ filtersData }),
-            MapsExplorerActions.setReferenceFieldSelectOptions({ options: filtersData.map(it => it.name ) })
+            MapsExplorerActions.setReferenceFieldSelectOptions({ options: filtersData.map(it => it.name) })
           ]),
           catchError(error => of(MapsExplorerActions.getFiltersDataFailure({ error })))
         )
@@ -69,7 +69,7 @@ export class MapsExplorerEffects {
         }
 
         if (props.imgMd && props.imgLg) {
-          actions.push(MapsExplorerActions.itemListChange({ medium: props.imgMd, large:props.imgLg }));
+          actions.push(MapsExplorerActions.itemListChange({ medium: props.imgMd, large: props.imgLg }));
         }
 
         return actions;
@@ -87,8 +87,7 @@ export class MapsExplorerEffects {
       ),
       mergeMap(() =>
         this.store$.pipe(select(MapsExplorerSelectors.getMapListPath),
-          switchMap( path => {
-            console.log(path);
+          switchMap(path => {
             if (path === null) {
               return throwError('Nie wybrano mapy');
             }
@@ -108,5 +107,5 @@ export class MapsExplorerEffects {
     private mapsExplorerService: MapsExplorerService,
     private store$: Store<KawState>,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) { }
 }

@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 @Component({
   selector: 'kaw-filters',
   templateUrl: './filters.component.html',
-  styleUrls: ['./filters.component.scss']
+  styleUrls: [ './filters.component.scss' ]
 })
 export class FiltersComponent implements OnInit {
 
@@ -46,7 +46,7 @@ export class FiltersComponent implements OnInit {
     this.disabledSelectPlaceHolder = 'Niedostępne';
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.referenceFieldsSelect$ = this.store.pipe(select(MapsExplorerSelectors.getReferenceFieldSelect));
     this.mapTypesSelect$ = this.store.pipe(select(MapsExplorerSelectors.getMapTypesSelect));
     this.electionTypesSelect$ = this.store.pipe(select(MapsExplorerSelectors.getElectionTypesSelect));
@@ -69,7 +69,7 @@ export class FiltersComponent implements OnInit {
     };
   }
 
-  referenceFieldChange(value) {
+  referenceFieldChange(value: number): void {
     this.selectedFilters.mapType = null;
     this.selectedFilters.electionType = null;
     this.selectedFilters.year = null;
@@ -90,7 +90,7 @@ export class FiltersComponent implements OnInit {
     );
   }
 
-  mapTypeChange(value) {
+  mapTypeChange(value: number): void {
     this.selectedFilters.electionType = null;
     this.selectedFilters.year = null;
     this.store.dispatch(MapsExplorerActions.mapTypeChange({ value: value }));
@@ -110,7 +110,7 @@ export class FiltersComponent implements OnInit {
     );
   }
 
-  electionTypeChange(value) {
+  electionTypeChange(value: number): void {
     this.selectedFilters.year = null;
     this.store.dispatch(MapsExplorerActions.electionTypeChange({ value: value }));
     this.router.navigate(
@@ -128,7 +128,7 @@ export class FiltersComponent implements OnInit {
     );
   }
 
-  yearTypeChange(value) {
+  yearTypeChange(value: number): void {
     this.store.dispatch(MapsExplorerActions.yearChange({ value: value }));
     this.router.navigate(
       [],

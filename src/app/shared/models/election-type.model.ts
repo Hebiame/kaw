@@ -1,8 +1,8 @@
 import { DeserializableModel } from "./deserializable.model";
 
 export class ElectionType implements DeserializableModel {
-  name: string;
-  years: string[];
+  public name: string;
+  public years: string[];
 
   deserialize(input: any): this {
     if (input.years == null) {

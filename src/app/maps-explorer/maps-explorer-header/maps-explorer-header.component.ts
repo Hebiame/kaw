@@ -9,7 +9,5 @@ export class MapsExplorerHeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit(): void { }
 }

@@ -20,8 +20,7 @@ export class SelectState {
     public isEnabled: boolean = false,
     public options: string[] = [],
     public value: number = null
-  ) {
-  }
+  ) { }
 }
 
 export const initialState: MapsExplorerState = {

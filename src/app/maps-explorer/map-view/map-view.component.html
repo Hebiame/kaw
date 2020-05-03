@@ -24,6 +24,10 @@
   </ng-template>
 
   <ng-container *ngIf="isFullscreen">
-    <kaw-fullscreen-image-viewer (isFullscreen)="toggleFullscreen()" [mapUrl]="mapImgPathLg$ | async"></kaw-fullscreen-image-viewer>
+    <kaw-fullscreen-image-viewer
+      (isFullscreen)="toggleFullscreen()"
+      [mapUrl]="mapImgPathLg$ | async"
+    >
+    </kaw-fullscreen-image-viewer>
   </ng-container>
 </div>

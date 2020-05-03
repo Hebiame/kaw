@@ -18,12 +18,12 @@ export class MapViewComponent implements OnInit {
     private store: Store<MapsExplorerState>
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.mapImgPathMd$ = this.store.pipe(select(MapsExplorerSelectors.getMapImgMdPath));
     this.mapImgPathLg$ = this.store.pipe(select(MapsExplorerSelectors.getMapImgLgPath));
   }
 
-  toggleFullscreen() {
+  toggleFullscreen(): void {
     this.isFullscreen = !this.isFullscreen;
   }
 }

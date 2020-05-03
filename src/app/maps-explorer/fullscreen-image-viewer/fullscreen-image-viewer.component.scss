@@ -20,12 +20,8 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      background: linear-gradient(#fff, #fff),
-        linear-gradient(#fff, #fff),
-        #000;
-      background-position: center;
+      background: linear-gradient(#fff, #fff) center no-repeat, linear-gradient(#fff, #fff) center no-repeat, #000;
       background-size: 50% 2px, 2px 50%;
-      background-repeat: no-repeat;
       transform: rotate(45deg);
     }
 
@@ -42,11 +38,11 @@
 
 ::ng-deep .img-container {
   position: relative;
-  height: 100vh!important;
+  height: 100vh !important;
 
   & img {
-    max-width: 100%!important;
-    max-height: 100%!important;
+    max-width: 100% !important;
+    max-height: 100% !important;
   }
 
   & .fullscreen-image-viewer__button {
@@ -62,22 +58,13 @@
     }
 
     &:nth-of-type(2) {
-      background:
-        linear-gradient(#fff,#fff),
-        linear-gradient(#fff,#fff),
-        #000;
-      background-position:center;
-      background-size: 45% 2px,2px 45%;
-      background-repeat: no-repeat;
+      background: linear-gradient(#fff, #fff) center no-repeat, linear-gradient(#fff, #fff) center no-repeat, #000;
+      background-size: 45% 2px, 2px 45%;
     }
 
     &:nth-of-type(1) {
-      background:
-        linear-gradient(#fff,#fff),
-        #000;
-      background-position:center;
+      background: linear-gradient(#fff, #fff) center no-repeat, #000;
       background-size: 45% 2px;
-      background-repeat: no-repeat;
     }
 
     &:hover {

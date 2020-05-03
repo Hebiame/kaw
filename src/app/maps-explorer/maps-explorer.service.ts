@@ -4,7 +4,6 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { ReferenceField } from "../shared/models/reference-field.model";
 import { MapData } from "../shared/models/map-data.model";
-import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +18,7 @@ export class MapsExplorerService {
     );
 
   constructor(
-    private http: HttpClient,
-    private router: Router
+    private http: HttpClient
   ) { }
 
   public getMapData(path: string): Observable<MapData[]> {

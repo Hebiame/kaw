@@ -1,14 +1,17 @@
 import { DeserializableModel } from "./deserializable.model";
+import { MapItem } from "./map-item.model";
+import { ElectionType } from "./election-type.model";
 
 export class MapData implements DeserializableModel {
-  header: string;
-  items: string[];
+  public header: string;
+  public items: MapItem[];
 
   deserialize(input: any): this {
-    if (input.items == null) {
-      input.items = [];
-    }
+    Object.assign(this, input)
 
-    return Object.assign(this, input);
+    this.items = input.items ? input.items.map(item =>
+      new MapItem().deserialize(item)) : [];
+
+    return this;
   }
 }

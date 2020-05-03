@@ -6,6 +6,7 @@ import { select, Store } from "@ngrx/store";
 import * as MapsExplorerSelectors from "../maps-explorer.selectors";
 import * as MapsExplorerActions from "../maps-explorer.actions";
 import { ActivatedRoute, Router } from "@angular/router";
+import { MapParams } from "../../shared/models/map-item.model";
 
 @Component({
   selector: 'kaw-maps-list',
@@ -22,16 +23,15 @@ export class MapsListComponent implements OnInit {
     private store: Store<MapsExplorerState>,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) {
-  }
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.mapData$ = this.store.pipe(select(MapsExplorerSelectors.getMapData));
     this.selectedMapMd$ = this.store.pipe(select(MapsExplorerSelectors.getSelectedMapNameMd));
     this.selectedMapLg$ = this.store.pipe(select(MapsExplorerSelectors.getSelectedMapNameLg));
   }
 
-  itemListChange(fileNameMd: string, fileNameLg: string) {
+  itemListChange(fileNameMd: string, fileNameLg: string): void {
     this.store.dispatch(MapsExplorerActions.itemListChange({ medium: fileNameMd, large: fileNameLg }));
 
     this.router.navigate(
@@ -47,8 +47,7 @@ export class MapsListComponent implements OnInit {
     );
   }
 
-  jumpToOtherMap(event, mapParams) {
-    event.preventDefault();
+  jumpToOtherMap(mapParams: MapParams): void {
     this.router.navigate(
       [],
       {

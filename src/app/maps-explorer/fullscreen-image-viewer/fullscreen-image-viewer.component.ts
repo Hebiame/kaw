@@ -1,18 +1,20 @@
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { ImageViewerConfig } from "angular-x-image-viewer";
 
 @Component({
   selector: 'kaw-fullscreen-image-viewer',
   templateUrl: './fullscreen-image-viewer.component.html',
-  styleUrls: ['./fullscreen-image-viewer.component.scss']
+  styleUrls: [ './fullscreen-image-viewer.component.scss' ]
 })
 export class FullscreenImageViewerComponent implements OnInit {
 
   @Input() mapUrl: string;
-  screenHeight: string;
-  screenWidth: string;
   @Output() isFullscreen = new EventEmitter<boolean>();
 
-  imageViewerConfig = {
+  public screenHeight: string;
+  public screenWidth: string;
+
+  public imageViewerConfig: ImageViewerConfig = {
     btnClass: 'fullscreen-image-viewer__button',
     containerBackgroundColor: '#000000',
     btnShow: {
@@ -33,16 +35,15 @@ export class FullscreenImageViewerComponent implements OnInit {
     this.getScreenSize();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  @HostListener('window:resize', ['$event'])
-  getScreenSize(event?) {
+  @HostListener('window:resize', [ '$event' ])
+  getScreenSize(event?): void {
     this.screenHeight = String(window.innerHeight);
     this.screenWidth = String(window.innerWidth);
   }
 
-  closeFullscreen() {
+  closeFullscreen(): void {
     this.isFullscreen.emit(false);
   }
 }
