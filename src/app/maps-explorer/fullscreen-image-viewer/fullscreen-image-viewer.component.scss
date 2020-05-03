@@ -1,0 +1,87 @@
+.fullscreen-image-viewer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  z-index: 1000;
+
+  &__button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
+
+    &--close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(#fff, #fff),
+        linear-gradient(#fff, #fff),
+        #000;
+      background-position: center;
+      background-size: 50% 2px, 2px 50%;
+      background-repeat: no-repeat;
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      background-color: #484848;
+      cursor: pointer;
+    }
+
+    &:active, &:focus {
+      outline: none;
+    }
+  }
+}
+
+::ng-deep .img-container {
+  position: relative;
+  height: 100vh!important;
+
+  & img {
+    max-width: 100%!important;
+    max-height: 100%!important;
+  }
+
+  & .fullscreen-image-viewer__button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
+
+    &:nth-of-type(3) {
+      display: none;
+    }
+
+    &:nth-of-type(2) {
+      background:
+        linear-gradient(#fff,#fff),
+        linear-gradient(#fff,#fff),
+        #000;
+      background-position:center;
+      background-size: 45% 2px,2px 45%;
+      background-repeat: no-repeat;
+    }
+
+    &:nth-of-type(1) {
+      background:
+        linear-gradient(#fff,#fff),
+        #000;
+      background-position:center;
+      background-size: 45% 2px;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      background-color: #484848;
+    }
+  }
+}

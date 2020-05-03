@@ -12,6 +12,7 @@ export class MapViewComponent implements OnInit {
 
   public mapImgPathMd$;
   public mapImgPathLg$;
+  public isFullscreen: boolean = false;
 
   constructor(
     private store: Store<MapsExplorerState>
@@ -20,5 +21,9 @@ export class MapViewComponent implements OnInit {
   ngOnInit() {
     this.mapImgPathMd$ = this.store.pipe(select(MapsExplorerSelectors.getMapImgMdPath));
     this.mapImgPathLg$ = this.store.pipe(select(MapsExplorerSelectors.getMapImgLgPath));
+  }
+
+  toggleFullscreen() {
+    this.isFullscreen = !this.isFullscreen;
   }
 }

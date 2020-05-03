@@ -22,6 +22,8 @@ import { EffectsModule } from "@ngrx/effects";
 import { MapsExplorerEffects } from "./maps-explorer.effects";
 import { NzSpaceModule } from "ng-zorro-antd/space";
 import { NgScrollbarModule } from "ngx-scrollbar";
+import { FullscreenImageViewerComponent } from './fullscreen-image-viewer/fullscreen-image-viewer.component';
+import { AngularImageViewerModule } from "angular-x-image-viewer";
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { NgScrollbarModule } from "ngx-scrollbar";
     MapsExplorerHeaderComponent,
     FiltersComponent,
     MapViewComponent,
-    MapsListComponent
+    MapsListComponent,
+    FullscreenImageViewerComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +50,8 @@ import { NgScrollbarModule } from "ngx-scrollbar";
     NzSpaceModule,
     NgScrollbarModule,
     NzButtonModule,
-    NzIconModule
+    NzIconModule,
+    AngularImageViewerModule
   ]
 })
 

@@ -2,7 +2,10 @@
   <ng-container *ngIf="(mapImgPathMd$ | async) && (mapImgPathLg$ | async); else placeholder">
     <div class="image-viewer__toolbar">
       <nz-button-group class="image-viewer__buttons">
-        <a nz-button nzType="default"><i nz-icon nzType="fullscreen"></i>Pełny ekran</a>
+        <a nz-button nzType="default" (click)="toggleFullscreen()">
+          <i nz-icon nzType="fullscreen"></i>
+          Pełny ekran
+        </a>
         <a nz-button nzType="default" [href]="mapImgPathLg$ | async" target="_self" download>
           <i nz-icon nzType="download"></i>
           Pobierz w pełnym rozmiarze
@@ -19,4 +22,8 @@
       </div>
     </div>
   </ng-template>
+
+  <ng-container *ngIf="isFullscreen">
+    <kaw-fullscreen-image-viewer (isFullscreen)="toggleFullscreen()" [mapUrl]="mapImgPathLg$ | async"></kaw-fullscreen-image-viewer>
+  </ng-container>
 </div>
