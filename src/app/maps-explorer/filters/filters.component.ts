@@ -55,11 +55,15 @@ export class FiltersComponent implements OnInit {
     const params = this.activatedRoute.snapshot.queryParams;
 
     const props = {
-      referenceField: params['referenceField'],
+      referenceField: '0',
       mapType: params['mapType'],
       electionType: params['electionType'],
       year: params['year']
     };
+
+    if (!params['mapType'] && !params['electionType'] && !params['year']) {
+      this.referenceFieldChange(0);
+    }
 
     this.selectedFilters = {
       referenceField: props.referenceField ? +props.referenceField : null,

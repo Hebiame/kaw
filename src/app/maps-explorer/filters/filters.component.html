@@ -1,6 +1,6 @@
 <form nz-form #filtersForm="ngForm" [nzLayout]="'inline'" class="form">
   <div nz-row>
-    <nz-form-item *ngIf="referenceFieldsSelect$ | async as referenceFieldSelect">
+    <nz-form-item *ngIf="referenceFieldsSelect$ | async as referenceFieldSelect" class="form__reference-field">
       <nz-form-label nzNoColon>
         {{ referenceFieldSelect.label }}
       </nz-form-label>
