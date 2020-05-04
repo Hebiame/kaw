@@ -1,0 +1,17 @@
+.logo {
+  width: 320px;
+
+  &__img {
+    height: 45px;
+  }
+
+  &__text {
+    font-size: 21px;
+    font-weight: 500;
+    width: 160px;
+    line-height: 1;
+    font-family: 'Titillium Web', sans-serif;
+    color: #ffffa4;
+    margin-top: 10px;
+  }
+}

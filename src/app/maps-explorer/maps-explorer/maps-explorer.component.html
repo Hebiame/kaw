@@ -1,0 +1,16 @@
+<nz-layout class="maps-explorer">
+  <kaw-maps-explorer-header></kaw-maps-explorer-header>
+  <kaw-filters></kaw-filters>
+  <nz-content>
+    <nz-layout>
+      <nz-sider nzWidth="320px" nzTheme="light" class="maps-explorer__sider">
+        <ng-scrollbar visibility="hover">
+          <kaw-maps-list></kaw-maps-list>
+        </ng-scrollbar>
+      </nz-sider>
+      <nz-content>
+        <kaw-map-view></kaw-map-view>
+      </nz-content>
+    </nz-layout>
+  </nz-content>
+</nz-layout>

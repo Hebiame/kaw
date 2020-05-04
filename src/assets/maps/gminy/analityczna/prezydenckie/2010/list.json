@@ -1,0 +1,244 @@
+[
+  {
+    "header": "I TURA",
+    "items": [
+      {
+        "text": "Zwycięzcy",
+        "mapModel": "standardowa",
+        "fileName": "01_ST_WPR_2010_1M.png",
+        "otherMapModel": null,
+        "otherMapParams": null
+      },
+      {
+        "text": "Drugie miejsca",
+        "mapModel": "standardowa",
+        "fileName": "02_ST_WPR_2010_2M.png",
+        "otherMapModel": null,
+        "otherMapParams": null
+      },
+      {
+        "text": "Trzecie miejsca",
+        "mapModel": "standardowa",
+        "fileName": "03_ST_WPR_2010_3M.png",
+        "otherMapModel": null,
+        "otherMapParams": null
+      },
+      {
+        "text": "Frekwencja",
+        "mapModel": "normatywna",
+        "fileName": "04_ST_WPR_2010_FREK.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "01_AN_WPR_2010_FREK.png"
+        }
+      },
+      {
+        "text": "Nieważne głosy",
+        "mapModel": "normatywna",
+        "fileName": "05_ST_WPR_2010_NIEW.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "02_AN_WPR_2010_NIEW.png"
+        }
+      },
+      {
+        "text": "Bronisław Komorowski",
+        "mapModel": "normatywna",
+        "fileName": "06_ST_WPR_2010_BR.KO.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "03_AN_WPR_2010_BR.KO.png"
+        }
+      },
+      {
+        "text": "Jarosław Kaczyński",
+        "mapModel": "normatywna",
+        "fileName": "07_ST_WPR_2010_JA.KA.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "04_AN_WPR_2010_JA.KA.png"
+        }
+      },
+      {
+        "text": "Grzegorz Napieralski",
+        "mapModel": "normatywna",
+        "fileName": "08_ST_WPR_2010_GR.NA.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "05_AN_WPR_2010_GR.NA.png"
+        }
+      },
+      {
+        "text": "Janusz Korwin Mikke",
+        "mapModel": "normatywna",
+        "fileName": "09_ST_WPR_2010_JKM.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "06_AN_WPR_2010_JKM.png"
+        }
+      },
+      {
+        "text": "Waldemar Pawlak",
+        "mapModel": "normatywna",
+        "fileName": "10_ST_WPR_2010_WA.PA.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "07_AN_WPR_2010_WA.PA.png"
+        }
+      },
+      {
+        "text": "Andrzej Olechowski",
+        "mapModel": "normatywna",
+        "fileName": "11_ST_WPR_2010_AN.OL.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "08_AN_WPR_2010_AN.OL.png"
+        }
+      },
+      {
+        "text": "Andrzej Lepper",
+        "mapModel": "normatywna",
+        "fileName": "12_ST_WPR_2010_AN.LE.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "09_AN_WPR_2010_AN.LE.png"
+        }
+      },
+      {
+        "text": "Marek Jurek",
+        "mapModel": "normatywna",
+        "fileName": "13_ST_WPR_2010_MA.JU.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "10_AN_WPR_2010_MA.JU.png"
+        }
+      },
+      {
+        "text": "Bogusław Ziętek",
+        "mapModel": "normatywna",
+        "fileName": "14_ST_WPR_2010_BO.ZI.png",
+        "otherMapModel": null,
+        "otherMapParams": null
+      },
+      {
+        "text": "Kornel Morawiecki",
+        "mapModel": "normatywna",
+        "fileName": "15_ST_WPR_2010_KO.MO.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "___.png"
+        }
+      }
+    ]
+  },
+  {
+    "header": "II TURA",
+    "items": [
+      {
+        "text": "Wyniki",
+        "mapModel": "standardowa",
+        "fileName": "16_ST_WPR_2010_IIT_WYN.png",
+        "otherMapModel": null,
+        "otherMapParams": null
+      },
+      {
+        "text": "Frekwencja",
+        "mapModel": "normatywna",
+        "fileName": "17_ST_WPR_2010_IIT_FREK.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "11_AN_WPR_2010_IIT_FREK.png"
+        }
+      },
+      {
+        "text": "Nieważne głosy",
+        "mapModel": "normatywna",
+        "fileName": "18_ST_WPR_2010_IIT_NIEW.png",
+        "otherMapModel": "kwantylowa",
+        "otherMapParams": {
+          "referenceField": 0,
+          "mapType": 1,
+          "electionType": 1,
+          "year": 1,
+          "item": "12_AN_WPR_2010_IIT_NIEW.png"
+        }
+      },
+      {
+        "text": "Spadki/Wzrosty frekwencji",
+        "mapModel": "normatywna",
+        "fileName": "19_ST_WPR_2010_1T-2T_DYN_FREK.png",
+        "otherMapModel": null,
+        "otherMapParams": null
+      },
+      {
+        "text": "Spadki/Wzrosty nieważnych głosów",
+        "mapModel": "normatywna",
+        "fileName": "20_ST_WPR_2010_1T-2T_DYN_NIEW.png",
+        "otherMapModel": null,
+        "otherMapParams": null
+      },
+      {
+        "text": "Bronisław Komorowski - Wzrost poparcia",
+        "mapModel": "standardowa",
+        "fileName": "21_ST_WPR_2010_1T-2T_DYN_BR.KO.png",
+        "otherMapModel": null,
+        "otherMapParams": null
+      },
+      {
+        "text": "Jarosław Kaczyński - Wzrost poparcia",
+        "mapModel": "standardowa",
+        "fileName": "22_ST_WPR_2010_1T-2T_DYN_JA.KA.png",
+        "otherMapModel": null,
+        "otherMapParams": null
+      }
+    ]
+  }
+]
