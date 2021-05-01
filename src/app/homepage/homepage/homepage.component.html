@@ -1,1 +1,44 @@
-<h1>Welcome to kaw!</h1>
+<header class="homepage-header">
+  <h1 class="homepage-header__title">Kartograficzne analizy wyborcze</h1>
+  <p class="homepage-header__description">
+    są zbiorem map przedstawiających zachowania wyborcze Polaków w różnych wyborach na przestrzeni lat. Mapy
+    zamieszczone na stronie zostały opracowane na podstawie danych z Państwowej Komisji Wyborczej.
+    <a href="/maps"><b>Rozpocznij przeglądanie -></b></a>
+  </p>
+  <div class="homepage-header__bottom-section">
+    <button class="homepage-header__more-info-button">
+      Więcej informacji
+    </button>
+  </div>
+</header>
+<main class="homepage-main-content">
+  <nz-card style="width:60vw;">
+    <p>Dostępne na stronie kartogramy ukazujące poparcie danego komitetu w gminie, zostały podzielone na dwie grupy:</p>
+    <ul>
+      <li>
+        Standardowe, gdzie zbiór gmin został podzielony sekwencją okrągłych wartości granic przedziałów.
+        ilustracja
+      </li>
+      <li>
+        Analityczne, w których liczebność zbioru gmin została podzielona metodą kwantylową. Metoda ta polega na takim
+        podziale uporządkowanych danych aby w każdej klasie znajdowała się jednakowa (w miarę możliwości) liczba pól
+        odniesienia. Tutaj wybrano podział decylowy czyli dzielący zbiór gmin na 10 części. Dla lepszego porównania
+        kartogramów zastosowano podobną skalę barw.
+        ilustracja
+      </li>
+    </ul>
+    <p>Oprócz tych dwóch grup dostępne na stronie są również mapy:</p>
+    <ul>
+      <li>
+        Dynamiki zmian – porównanie wyników i zjawisk w dwóch okresach wyborczych
+      </li>
+      <li>
+        Syntetyczne – synteza zjawisk wyborczych na mapach np. średnia frekwencja w danych wyborach lub średnie poparcie
+        danego komitetu na przestrzeni lat
+      </li>
+      <li>
+        Inne – subiektywne opracowania autora
+      </li>
+    </ul>
+  </nz-card>
+</main>
