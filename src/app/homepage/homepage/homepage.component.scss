@@ -1,16 +1,29 @@
 .homepage-header {
-  background-color: #fff;
+  background-color: #f9f9f9;
   //box-shadow: 0 0 20px 10px rgb(0 0 0 / 18%);
   position: relative;
 
+  &__logo {
+    background-color: #663333;
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+
+    & img {
+      height: 100%;
+    }
+  }
+
   &__title {
-    text-align: center;
+    line-height: 48px;
     font-size: 46px;
     font-family: 'Titillium Web', sans-serif;
-    padding-top: 5vw;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 4px;
+    margin-bottom: 0;
   }
 
   &__description {
@@ -23,11 +36,7 @@
     letter-spacing: 1px;
   }
 
-  &__arrow-down {
-    font-size: 30px;
-    margin-top: 12px;
-    position: absolute;
-  }
+
   &__more-info-button {
     padding: 10px 46px;
     font-size: 22px;
@@ -38,11 +47,15 @@
     letter-spacing: 1px;
     border-radius: 2px;
     color: #663333;
+    margin: auto;
   }
 
   &__bottom-section {
-    padding-bottom: 80px;
+    padding-bottom: 50px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -61,4 +74,10 @@
   font-weight: 300;
   height: 46px !important;
   padding: 10px 20px !important;
+}
+
+.anticon {
+  font-size: 14px;
+  margin-top: 20px;
+  color: #663333;
 }
