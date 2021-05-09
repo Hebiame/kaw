@@ -1,1 +1,51 @@
-<h1>Welcome to kaw!</h1>
+<header class="homepage-header">
+  <div style="display: flex; flex-direction: row;justify-content: center;align-items: center;padding-top: 5vw; margin-bottom: 0;">
+    <div class="homepage-header__logo"><img src="assets/images/logo.png"/></div>
+    <h1 class="homepage-header__title">Kartograficzne <br/> analizy wyborcze</h1>
+  </div>
+  <p class="homepage-header__description">
+    są zbiorem map przedstawiających zachowania wyborcze Polaków w różnych wyborach na przestrzeni lat. Mapy
+    zamieszczone na stronie zostały opracowane na podstawie danych z Państwowej Komisji Wyborczej.
+    <a href="/maps" class="homepage-header__link"><b>Rozpocznij przeglądanie<i nz-icon nzType="double-right" nzTheme="outline" class="homepage-header__arrow-right"></i>
+    </b></a>
+  </p>
+  <div class="homepage-header__bottom-section">
+    <div class="homepage-header__more-info-button">
+      Objaśnienia do map
+    </div>
+    <i nz-icon nzType="double-right" nzTheme="outline" class="homepage-header__arrow-down"></i>
+  </div>
+</header>
+<main class="homepage-main-content">
+  <nz-card>
+    <p>Dostępne na stronie kartogramy ukazujące poparcie danego komitetu w gminie, zostały podzielone na dwie grupy:</p>
+    <ul>
+      <li>
+        <p><b>Standardowe</b>, gdzie zbiór gmin został podzielony sekwencją okrągłych wartości granic przedziałów.</p>
+        <img src="assets/images/homepage_standard.png" />
+      </li>
+      <li>
+        <p><b>Analityczne</b>, w których liczebność zbioru gmin została podzielona metodą kwantylową. Metoda ta polega na takim
+        podziale uporządkowanych danych aby w każdej klasie znajdowała się jednakowa (w miarę możliwości) liczba pól
+        odniesienia. Tutaj wybrano podział decylowy czyli dzielący zbiór gmin na 10 części. Dla lepszego porównania
+        kartogramów zastosowano podobną skalę barw.</p>
+        <img src="assets/images/homepage_analytic.png" />
+      </li>
+    </ul>
+    <p>Oprócz tych dwóch grup dostępne na stronie są również mapy:</p>
+    <ul>
+      <li>
+        <p><b>Dynamiki zmian</b> – porównanie wyników i zjawisk w dwóch okresach wyborczych</p>
+        <img src="assets/images/homepage_dynamic.png" />
+      </li>
+      <li>
+        <p><b>Syntetyczne</b> – synteza zjawisk wyborczych na mapach np. średnia frekwencja w danych wyborach lub średnie poparcie
+        danego komitetu na przestrzeni lat</p>
+      </li>
+      <li>
+        <p>
+        <b>Inne</b> – subiektywne opracowania autora</p>
+      </li>
+    </ul>
+  </nz-card>
+</main>
