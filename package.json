@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:ngrok": "ng serve --open --host 192.168.0.103 --port 4200 --disable-host-check",
     "build:dev": "ng build",
     "build:prod": "ng build --prod",
     "test": "ng test",

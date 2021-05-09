@@ -33,8 +33,7 @@
               }
             ],
             "styles": [
-              "src/theme.less",
-              "src/styles.scss"
+              "src/theme.less"
             ],
             "scripts": []
           },
@@ -97,9 +96,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": [],
             "scripts": []
           }
         },
