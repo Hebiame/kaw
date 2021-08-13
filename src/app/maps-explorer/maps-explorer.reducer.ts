@@ -1,17 +1,17 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as mapsExplorerActions from './maps-explorer.actions';
-import { ReferenceField } from "../shared/models/reference-field.model";
-import { MapData } from "../shared/models/map-data.model";
+import { ReferenceField } from '../shared/models/reference-field.model';
+import { MapData } from '../shared/models/map-data.model';
 
 export interface MapsExplorerState {
-  filtersData: ReferenceField[],
-  referenceFieldSelect: SelectState,
-  mapTypesSelect: SelectState,
-  electionTypesSelect: SelectState,
-  yearsSelect: SelectState,
-  mapData: MapData[],
-  selectedMapNameMd: string,
-  selectedMapNameLg: string
+  filtersData: ReferenceField[];
+  referenceFieldSelect: SelectState;
+  mapTypesSelect: SelectState;
+  electionTypesSelect: SelectState;
+  yearsSelect: SelectState;
+  mapData: MapData[];
+  selectedMapNameMd: string;
+  selectedMapNameLg: string;
 }
 
 export class SelectState {
@@ -38,13 +38,13 @@ const mapsExplorerReducer = createReducer(
   initialState,
   on(mapsExplorerActions.getFiltersDataSuccess, (state, { filtersData }) => ({
     ...state,
-    filtersData: filtersData
+    filtersData
   })),
   on(mapsExplorerActions.setReferenceFieldSelectOptions, (state, { options }) => ({
     ...state,
     referenceFieldSelect: {
       ...state.referenceFieldSelect,
-      options: options
+      options
     }
   })),
   on(mapsExplorerActions.referenceFieldChange, (state, { value }) => {
@@ -56,7 +56,7 @@ const mapsExplorerReducer = createReducer(
       ...state,
       referenceFieldSelect: {
         ...state.referenceFieldSelect,
-        value: value
+        value
       },
       mapTypesSelect: {
         ...state.mapTypesSelect,
@@ -94,7 +94,7 @@ const mapsExplorerReducer = createReducer(
       ...state,
       mapTypesSelect: {
         ...state.mapTypesSelect,
-        value: value
+        value
       },
       electionTypesSelect: {
         ...state.electionTypesSelect,
@@ -123,7 +123,7 @@ const mapsExplorerReducer = createReducer(
       ...state,
       electionTypesSelect: {
         ...state.electionTypesSelect,
-        value: value
+        value
       },
       yearsSelect: {
         ...state.yearsSelect,
@@ -145,7 +145,7 @@ const mapsExplorerReducer = createReducer(
       ...state,
       yearsSelect: {
         ...state.yearsSelect,
-        value: value,
+        value,
         options: years != null ? years : []
       },
       mapData: null,

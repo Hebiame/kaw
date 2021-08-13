@@ -5,9 +5,9 @@ import { catchError, flatMap, map, mergeMap, switchMap, take } from 'rxjs/operat
 import { MapsExplorerService } from './maps-explorer.service';
 import * as MapsExplorerActions from './maps-explorer.actions';
 import * as MapsExplorerSelectors from './maps-explorer.selectors';
-import { KawState } from "../reducers";
-import { select, Store } from "@ngrx/store";
-import { ActivatedRoute } from "@angular/router";
+import { KawState } from '../reducers';
+import { select, Store } from '@ngrx/store';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class MapsExplorerEffects {
@@ -42,12 +42,12 @@ export class MapsExplorerEffects {
       }),
       flatMap((params) => {
         const props = {
-          referenceField: params['referenceField'],
-          mapType: params['mapType'],
-          electionType: params['electionType'],
-          year: params['year'],
-          imgMd: params['imgMd'],
-          imgLg: params['imgLg']
+          referenceField: params.referenceField,
+          mapType: params.mapType,
+          electionType: params.electionType,
+          year: params.year,
+          imgMd: params.imgMd,
+          imgLg: params.imgLg
         };
 
         const actions = [];
